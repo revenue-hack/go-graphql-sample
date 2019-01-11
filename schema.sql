@@ -1,0 +1,1 @@
+create table users (user_id varchar(255), user_name varchar(40), description text, photo_url varchar(100), email varchar(60), primary key(user_id));

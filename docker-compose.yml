@@ -1,0 +1,21 @@
+version: '3.7'
+services:
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: graphql
+      MYSQL_DATABASE: graphql
+      MYSQL_PASSWORD: graphql
+    volumes:
+      - ./my.cnf:/etc/mysql/conf.d/my.cnf
+      - gographqlsamplestore:/var/lib/mysql
+      - ./schema.sql:/docker-entrypoint-initdb.d/1_schema.sql
+    ports:
+      - "3306:3306"
+    container_name: go-graphql-sample-db
+
+volumes:
+  gographqlsamplestore:
+    driver: local
+
