@@ -2,6 +2,7 @@ package main
 
 import (
 	"errors"
+
 	"github.com/graphql-go/graphql"
 )
 
@@ -14,15 +15,15 @@ var Schema, _ = graphql.NewSchema(graphql.SchemaConfig{
 var rootQuery = graphql.NewObject(graphql.ObjectConfig{
 	Name: "RootQuery",
 	Fields: graphql.Fields{
-		"user":      UserField,
-		"userList":  UserListField,
+		"user":     UserField,
+		"userList": UserListField,
 	},
 })
 
 var rootMutation = graphql.NewObject(graphql.ObjectConfig{
 	Name: "RootMutation",
 	Fields: graphql.Fields{
-		"createUser":  CreateUserField,
+		"createUser": CreateUserField,
 	},
 })
 
@@ -110,4 +111,3 @@ var UserType = graphql.NewObject(graphql.ObjectConfig{
 		},
 	},
 })
-

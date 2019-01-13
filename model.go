@@ -2,6 +2,7 @@ package main
 
 import (
 	"errors"
+
 	"github.com/google/uuid"
 )
 
@@ -39,6 +40,6 @@ func NewUser(
 		UserName:    userName,
 		Description: description,
 		PhotoURL:    photoURL,
-		Email:       email }, nil
+		Email:       email}, nil
 
 }

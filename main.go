@@ -3,9 +3,10 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/graphql-go/graphql"
 	"io/ioutil"
 	"net/http"
+
+	"github.com/graphql-go/graphql"
 )
 
 func main() {
