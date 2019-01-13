@@ -15,7 +15,7 @@ var rootQuery = graphql.NewObject(graphql.ObjectConfig{
 	Name: "RootQuery",
 	Fields: graphql.Fields{
 		"user":      UserField,
-		//"userList":  UserListField,
+		"userList":  UserListField,
 	},
 })
 
@@ -44,15 +44,17 @@ var UserField = &graphql.Field{
 	},
 }
 
-/*
 var UserListField = &graphql.Field{
 	Type:        graphql.NewList(UserType),
 	Description: "List of users",
 	Resolve: func(p graphql.ResolveParams) (interface{}, error) {
-		return infrastructure.NewUserRepository().UserList(), nil
+		users, err := UserList()
+		if err != nil {
+			panic(err)
+		}
+		return users, nil
 	},
 }
-*/
 
 var CreateUserField = &graphql.Field{
 	Type:        UserType,
